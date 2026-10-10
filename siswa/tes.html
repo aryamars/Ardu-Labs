@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Tes - ARDU-LABS</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><style>body{font-family:Poppins,sans-serif}</style></head>
+<body class="bg-gray-50"><div class="flex min-h-screen"><div id="sidebar" data-active="tes"></div><main class="flex-1 p-4 md:p-8 overflow-y-auto">
+<h1 class="text-3xl font-bold text-gray-800">Tes</h1><p class="text-gray-500 mb-6">Kerjakan pretest dan posttest sesuai jadwal dari guru</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mb-6">
+<div class="bg-white rounded-xl shadow-sm border border-green-100 p-5"><span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">Selesai</span><h3 class="font-bold text-lg mt-3">Pretest</h3><p class="text-sm text-gray-500">Nilai: 60</p></div>
+<div class="bg-white rounded-xl shadow-sm border border-blue-100 p-5"><span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">Tersedia</span><h3 class="font-bold text-lg mt-3">Posttest</h3><p class="text-sm text-gray-500">3 soal pilihan ganda</p></div></div>
+<form id="tf" class="bg-white rounded-xl shadow p-6 max-w-3xl text-sm"><h2 class="font-bold mb-4">Posttest</h2>
+<div id="qs"></div><p id="res" class="hidden mt-4 p-3 rounded-lg bg-blue-50 text-blue-800"></p>
+<button class="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg">Kirim jawaban</button></form>
+</main></div><script src="../assets/js/script.js"></script>
+<script>
+const Q=[['Fungsi untuk MEMBACA sensor digital adalah...',['digitalWrite()','digitalRead()','pinMode()'],1],['Fungsi yang dijalankan satu kali saat Arduino dinyalakan adalah...',['setup()','loop()','delay()'],0],['LED bawaan Arduino Uno terhubung ke pin...',['13','5','A0'],0]];
+document.getElementById('qs').innerHTML=Q.map((q,i)=>`<div class="mb-4"><p class="font-medium mb-2">${i+1}. ${q[0]}</p>${q[1].map((o,j)=>`<label class="block p-2 border rounded-lg mb-1"><input type="radio" name="q${i}" value="${j}"> ${o}</label>`).join('')}</div>`).join('');
+document.getElementById('tf').onsubmit=e=>{e.preventDefault();
+ if(Q.some((q,i)=>!document.querySelector(`input[name=q${i}]:checked`))){alert('Jawab semua soal dulu.');return;}
+ const b=Q.filter((q,i)=>+document.querySelector(`input[name=q${i}]:checked`).value===q[2]).length;
+ const r=document.getElementById('res');r.classList.remove('hidden');r.textContent=`Jawaban tersimpan. Benar ${b} dari ${Q.length}. Skor: ${Math.round(b/Q.length*100)}.`;e.target.querySelector('button').disabled=true;};
+</script></body></html>
