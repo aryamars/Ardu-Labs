@@ -1,0 +1,76 @@
+/* ==========================================================
+   ARDU-LABS - style.css
+   Isi: 1) variabel tema  2) dasar  3) sidebar  4) komponen form
+        5) utilitas
+   Catatan: tata letak dan spasi tetap memakai Tailwind (CDN);
+   file ini menyimpan tema, sidebar, dan komponen yang dipakai
+   berulang di banyak halaman.
+   ========================================================== */
+
+/* 1) Variabel tema */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --indigo: #4338ca;
+  --bg: #f9fafb;
+  --border: #d1d5db;
+  --font: 'Poppins', sans-serif;
+}
+
+/* 2) Dasar */
+body {
+  font-family: var(--font);
+  background: var(--bg);
+}
+
+/* 3) Sidebar (dibuat oleh renderSidebar() di script.js) */
+.sidebar {
+  display: none;
+  width: 16rem;
+  min-height: 100vh;
+  padding: 1.5rem;
+  color: #fff;
+  background: linear-gradient(to bottom right, var(--primary), var(--indigo));
+}
+@media (min-width: 768px) {
+  .sidebar { display: block; }
+}
+.sidebar .profile { text-align: center; margin-bottom: 2rem; }
+.sidebar .profile h3 { font-size: 1.125rem; font-weight: 600; }
+.sidebar .profile p { font-size: 0.875rem; opacity: 0.75; }
+.sidebar .avatar {
+  width: 4rem; height: 4rem; margin: 0 auto 0.75rem;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; background: #fff; border-radius: 9999px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+.sidebar .nav { display: flex; flex-direction: column; gap: 0.5rem; }
+.nav-link {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.75rem; border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+.nav-link:hover { background: rgba(255, 255, 255, 0.1); }
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 4) Komponen form */
+.field {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+}
+.field-lg { padding: 0.75rem 1rem; }
+.field:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+}
+
+/* 5) Utilitas */
+.gradient-bg {
+  background: linear-gradient(to bottom right, var(--primary), var(--indigo));
+}

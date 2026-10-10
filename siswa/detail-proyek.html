@@ -9,13 +9,9 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        font-family: Poppins, sans-serif;
-      }
-    </style>
+    <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
-  <body class="bg-gray-50">
+  <body>
     <div class="flex min-h-screen">
       <div id="sidebar" data-active="proyek"></div>
       <main class="flex-1 p-4 md:p-8 overflow-y-auto">
@@ -100,7 +96,7 @@
                   type="url"
                   required
                   placeholder="https://tinkercad.com/..."
-                  class="w-full px-3 py-2 border rounded-lg"
+                  class="field"
                 />
               </div>
               <div>
@@ -115,16 +111,13 @@
                   required
                   rows="3"
                   placeholder="1. Aryawangi (Ketua)"
-                  class="w-full px-3 py-2 border rounded-lg"
+                  class="field"
                 ></textarea>
               </div>
               <div>
                 <label class="block text-xs font-bold text-gray-500 mb-1"
                   >Catatan</label
-                ><textarea
-                  rows="2"
-                  class="w-full px-3 py-2 border rounded-lg"
-                ></textarea>
+                ><textarea rows="2" class="field"></textarea>
               </div>
               <button
                 type="submit"

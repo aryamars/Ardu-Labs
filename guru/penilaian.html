@@ -9,13 +9,9 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        font-family: Poppins, sans-serif;
-      }
-    </style>
+    <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
-  <body class="bg-gray-50">
+  <body>
     <div class="flex min-h-screen">
       <div id="sidebar" data-role="guru" data-active="penilaian"></div>
       <main class="flex-1 p-4 md:p-8 overflow-y-auto">
@@ -50,11 +46,7 @@
             <div>
               <label class="block text-xs font-bold text-gray-500 mb-1"
                 >Umpan balik</label
-              ><textarea
-                id="fb"
-                rows="3"
-                class="w-full px-3 py-2 border rounded-lg"
-              ></textarea>
+              ><textarea id="fb" rows="3" class="field"></textarea>
             </div>
             <p id="er" class="text-red-600 text-xs"></p>
             <button
