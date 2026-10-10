@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Penilaian - ARDU-LABS</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><style>body{font-family:Poppins,sans-serif}</style></head><body class="bg-gray-50"><div class="flex min-h-screen"><div id="sidebar" data-role="guru" data-active="penilaian"></div><main class="flex-1 p-4 md:p-8 overflow-y-auto"><h1 class="text-3xl font-bold text-gray-800">Penilaian tugas siswa</h1><p class="text-gray-500 mb-6">Periksa submission, beri skor, dan tulis umpan balik</p>
+<div id="list" class="bg-white rounded-xl shadow overflow-x-auto mb-6"></div>
+<div id="det" class="hidden bg-white rounded-xl shadow p-6 max-w-2xl text-sm"><h2 id="dt" class="font-bold text-lg mb-2"></h2><p id="dl" class="mb-3 text-blue-600"></p><p class="text-gray-500 mb-4">File: laporan, source code, dokumentasi (terlampir)</p>
+<form id="nf" class="space-y-3"><div><label class="block text-xs font-bold text-gray-500 mb-1">Skor (0-100)</label><input id="sk" type="number" required class="w-32 px-3 py-2 border rounded-lg"></div>
+<div><label class="block text-xs font-bold text-gray-500 mb-1">Umpan balik</label><textarea id="fb" rows="3" class="w-full px-3 py-2 border rounded-lg"></textarea></div>
+<p id="er" class="text-red-600 text-xs"></p><button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">Simpan penilaian</button></form></div>
+<script>
+const D=[{s:'Aryawangi',p:'Smart Home Controller',t:'https://tinkercad.com/things/abc',w:'24 Des 2026',st:'Menunggu Penilaian'},{s:'Budi Santoso',p:'Smart Home Controller',t:'https://tinkercad.com/things/xyz',w:'26 Des 2026',st:'Terlambat'},{s:'Siti Aminah',p:'Lampu LED Berkedip',t:'https://wokwi.com/projects/123',w:'10 Nov 2026',st:'Sudah dinilai',k:90}];
+let cur=-1;
+function draw(){document.getElementById('list').innerHTML='<table class="w-full text-sm"><thead class="bg-gray-50 text-left text-gray-500"><tr><th class="p-3">Siswa</th><th class="p-3">Proyek</th><th class="p-3">Dikumpulkan</th><th class="p-3">Status</th><th></th></tr></thead><tbody class="divide-y">'+D.map((r,i)=>`<tr><td class="p-3">${r.s}</td><td class="p-3">${r.p}</td><td class="p-3">${r.w}</td><td class="p-3">${r.st}</td><td class="p-3"><button onclick="open_(${i})" class="text-blue-600">${r.k?'Lihat':'Nilai'}</button></td></tr>`).join('')+'</tbody></table>';}
+function open_(i){cur=i;const r=D[i];document.getElementById('det').classList.remove('hidden');document.getElementById('dt').textContent=r.s+' · '+r.p;document.getElementById('dl').textContent=r.t;document.getElementById('sk').value=r.k||'';document.getElementById('er').textContent='';}
+document.getElementById('nf').onsubmit=e=>{e.preventDefault();const k=+document.getElementById('sk').value;
+ if(k<0||k>100){document.getElementById('er').textContent='Skor harus antara 0 dan 100.';return;}
+ D[cur].k=k;D[cur].st='Sudah dinilai';draw();document.getElementById('det').classList.add('hidden');alert('Penilaian tersimpan. Siswa dapat melihatnya di halaman Nilai.');};
+draw();
+</script>
+</main></div><script src="../assets/js/script.js"></script></body></html>
