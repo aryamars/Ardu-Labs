@@ -1,14 +1,97 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Detail Materi - ARDU-LABS</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><style>body{font-family:Poppins,sans-serif}</style></head><body class="bg-gray-50"><div class="flex min-h-screen"><div id="sidebar" data-active="materi"></div><main class="flex-1 p-4 md:p-8 overflow-y-auto"><div class="max-w-4xl mx-auto"><a href="materi.html" class="text-blue-600 text-sm">← Kembali ke daftar materi</a>
-<span class="block mt-4 text-xs font-bold text-blue-600">Pertemuan 5 · Pelaksanaan proyek</span>
-<h1 class="text-3xl font-bold text-gray-800 mt-1">Input dan Output Digital</h1>
-<div class="bg-white rounded-xl shadow p-5 mt-6"><h2 class="font-bold mb-2">Tujuan pembelajaran</h2><p class="text-sm text-gray-600">Siswa mampu menjelaskan dan menerapkan fungsi input dan output digital pada Arduino Uno.</p></div>
-<div class="bg-gray-900 aspect-video rounded-xl mt-6 flex items-center justify-center text-white">Video pembelajaran</div>
-<div class="bg-white rounded-xl shadow p-6 mt-6"><h2 class="text-xl font-bold mb-3">Uraian materi</h2><p class="text-gray-600 text-sm mb-3">Arduino menerima informasi dari sensor (input) lalu memerintahkan komponen seperti LED atau relay (output).</p>
-<ul class="list-disc pl-5 text-sm text-gray-600 space-y-1"><li><b>Digital input:</b> HIGH atau LOW, dibaca dengan digitalRead().</li><li><b>Digital output:</b> menyalakan atau mematikan komponen dengan digitalWrite().</li></ul></div>
-<a href="https://www.tinkercad.com/" target="_blank" class="block bg-blue-50 border border-blue-100 rounded-xl p-4 mt-6 text-sm text-blue-800">Praktik di simulator Tinkercad (membuka tab baru) ↗</a>
-<div class="bg-white rounded-xl shadow p-6 mt-6"><h2 class="font-bold mb-3">Kuis formatif</h2><p class="text-sm font-medium mb-3">Fungsi Arduino untuk MEMBACA data sensor digital adalah...</p>
-<label class="block p-3 border rounded-lg mb-2 text-sm"><input type="radio" name="quiz" value="a"> A. digitalWrite(pin, value)</label>
-<label class="block p-3 border rounded-lg mb-2 text-sm"><input type="radio" name="quiz" value="b"> B. digitalRead(pin)</label>
-<label class="block p-3 border rounded-lg mb-2 text-sm"><input type="radio" name="quiz" value="c"> C. pinMode(pin, OUTPUT)</label>
-<button onclick="checkQuiz()" class="mt-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg">Cek jawaban</button><div id="quizResult" class="hidden"></div></div></div>
-</main></div><script src="../assets/js/script.js"></script></body></html>
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Materi - ARDU-LABS</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: Poppins, sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <div class="flex min-h-screen">
+      <div id="sidebar" data-active="materi"></div>
+      <main class="flex-1 p-4 md:p-8 overflow-y-auto">
+        <div class="max-w-4xl mx-auto">
+          <a href="materi.html" class="text-blue-600 text-sm"
+            >← Kembali ke daftar materi</a
+          >
+          <span class="block mt-4 text-xs font-bold text-blue-600"
+            >Pertemuan 5 · Pelaksanaan proyek</span
+          >
+          <h1 class="text-3xl font-bold text-gray-800 mt-1">
+            Input dan Output Digital
+          </h1>
+          <div class="bg-white rounded-xl shadow p-5 mt-6">
+            <h2 class="font-bold mb-2">Tujuan pembelajaran</h2>
+            <p class="text-sm text-gray-600">
+              Siswa mampu menjelaskan dan menerapkan fungsi input dan output
+              digital pada Arduino Uno.
+            </p>
+          </div>
+          <div
+            class="bg-gray-900 aspect-video rounded-xl mt-6 flex items-center justify-center text-white"
+          >
+            Video pembelajaran
+          </div>
+          <div class="bg-white rounded-xl shadow p-6 mt-6">
+            <h2 class="text-xl font-bold mb-3">Uraian materi</h2>
+            <p class="text-gray-600 text-sm mb-3">
+              Arduino menerima informasi dari sensor (input) lalu memerintahkan
+              komponen seperti LED atau relay (output).
+            </p>
+            <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
+              <li>
+                <b>Digital input:</b> HIGH atau LOW, dibaca dengan
+                digitalRead().
+              </li>
+              <li>
+                <b>Digital output:</b> menyalakan atau mematikan komponen dengan
+                digitalWrite().
+              </li>
+            </ul>
+          </div>
+          <a
+            href="https://www.tinkercad.com/"
+            target="_blank"
+            class="block bg-blue-50 border border-blue-100 rounded-xl p-4 mt-6 text-sm text-blue-800"
+            >Praktik di simulator Tinkercad (membuka tab baru) ↗</a
+          >
+          <div class="bg-white rounded-xl shadow p-6 mt-6">
+            <h2 class="font-bold mb-3">Kuis formatif</h2>
+            <p class="text-sm font-medium mb-3">
+              Fungsi Arduino untuk MEMBACA data sensor digital adalah...
+            </p>
+            <label class="block p-3 border rounded-lg mb-2 text-sm"
+              ><input type="radio" name="quiz" value="a" /> A. digitalWrite(pin,
+              value)</label
+            >
+            <label class="block p-3 border rounded-lg mb-2 text-sm"
+              ><input type="radio" name="quiz" value="b" /> B.
+              digitalRead(pin)</label
+            >
+            <label class="block p-3 border rounded-lg mb-2 text-sm"
+              ><input type="radio" name="quiz" value="c" /> C. pinMode(pin,
+              OUTPUT)</label
+            >
+            <button
+              onclick="checkQuiz()"
+              class="mt-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg"
+            >
+              Cek jawaban
+            </button>
+            <div id="quizResult" class="hidden"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>
