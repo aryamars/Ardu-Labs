@@ -305,7 +305,7 @@ CFG.proyek.rows.push(
   {
     judul: "Lampu Lalu Lintas Mini",
     batas: "2027-01-10",
-    desk: "Simulasi lampu lalu lintas tiga warna. Alat: Arduino Uno, 3 LED, resistor.",
+    desk: "Lampu lalu lintas tiga warna dengan program Arduino IDE. Alat: Arduino Uno, 3 LED, resistor.",
   },
 );
 CFG.guru.rows.push(

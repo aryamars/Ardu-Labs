@@ -61,21 +61,21 @@
             {
               s: "Aryawangi",
               p: "Smart Home Controller",
-              t: "https://tinkercad.com/things/abc",
+              t: "https://youtube.com/watch?v=demo",
               w: "24 Des 2026",
               st: "Menunggu Penilaian",
             },
             {
               s: "Budi Santoso",
               p: "Smart Home Controller",
-              t: "https://tinkercad.com/things/xyz",
+              t: "https://youtube.com/watch?v=demo",
               w: "26 Des 2026",
               st: "Terlambat",
             },
             {
               s: "Siti Aminah",
               p: "Lampu LED Berkedip",
-              t: "https://wokwi.com/projects/123",
+              t: "https://youtube.com/watch?v=demo",
               w: "10 Nov 2026",
               st: "Sudah dinilai",
               k: 90,
@@ -96,7 +96,8 @@
             const r = D[i];
             document.getElementById("det").classList.remove("hidden");
             document.getElementById("dt").textContent = r.s + " · " + r.p;
-            document.getElementById("dl").textContent = r.t;
+            document.getElementById("dl").textContent =
+              "Video demonstrasi: " + r.t;
             document.getElementById("sk").value = r.k || "";
             document.getElementById("er").textContent = "";
           }
